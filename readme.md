@@ -13,8 +13,13 @@ Now I am in 11th grade. After receiving secondary education, I want to go to uni
 > Ruby <br>
  
 > Python <br>
+
 > GO <br>
+
 > c# <br>
+
 > C++ <br>
+
 > HTML <br>
+
 > CSS <br>
