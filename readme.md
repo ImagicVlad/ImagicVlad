@@ -21,7 +21,7 @@ Now I am in 11th grade. After receiving secondary education, I want to go to uni
 > ### GO <br>
 > - asdasd
 >   
-> ### C# <br>
+> ### C#
 > - asdasd
 >   
 > ### C++ <br>
