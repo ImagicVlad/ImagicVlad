@@ -5,5 +5,5 @@
   <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif"    height="32"/>  
 </h1>
 <h3 align="center">Computer science student, IT news writer from Russia </h3>
-# A little about myself
+<h3>A little about myself</h3> 
 * Now I am in 11th grade and studying to become a programmer. I want to go to university after completing secondary education
