@@ -6,6 +6,7 @@
   </h1>
   <h3 align="center">Computer science student, IT news writer from Russia </h3>
   <br>
+  <a href=""><span>Русский</span></a>|
   
  ## A little about me
 ### Now I am in 11th grade. After receiving secondary education, I want to go to university to become a programmer. I will publish all the projects and codes that I create during the learning process on my GitHub profile. <br>
