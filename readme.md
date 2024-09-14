@@ -14,8 +14,20 @@ Now I am in 11th grade. After receiving secondary education, I want to go to uni
 > - asdasd
 > 
 > Python <br>
+> - asdasd
+>   
 > GO <br>
+> - asdasd
+>   
 > c# <br>
+> - asdasd
+>   
 > C++ <br>
+> - asdasd
+>
 > HTML <br>
+> - asdasd
+>
 > CSS <br>
+> - asdasd
+>   
