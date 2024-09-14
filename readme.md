@@ -13,23 +13,23 @@ Now I am in 11th grade. After receiving secondary education, I want to go to uni
 
 ### Programming languages
 > ### Ruby 
-> - asdasd
+> - [asdasd](#banner)
 > 
 > ### Python 
 > - [asdasd](#banner)
 >   
 > ### GO 
-> - asdasd
+> - [asdasd](#banner)
 >   
 > ### C#
-> - asdasd
+> - [asdasd](#banner)
 >   
 > ### C++ 
-> - asdasd
+> - [asdasd](#banner)
 >
 > ### HTML 
-> - asdasd
+> - [asdasd](#banner)
 >
 > ### CSS 
-> - asdasd
+> - [asdasd](#banner)
 >   
