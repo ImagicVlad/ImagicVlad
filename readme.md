@@ -8,6 +8,4 @@
   <br>
   <h3>A little about myself</h3> 
 
-100. First list item
-     - First nested list item
-       - Second nested list item
+# dfdf
