@@ -11,15 +11,10 @@
 Now I am in 11th grade. After receiving secondary education, I want to go to university to become a programmer. I will publish all the projects and codes that I create during the learning process on my GitHub profile. <br>
 ### Alr. Let's take a look at my Readme
 > Ruby <br>
- 
+> > ghfj
 > Python <br>
-
 > GO <br>
-
 > c# <br>
-
 > C++ <br>
-
 > HTML <br>
-
 > CSS <br>
