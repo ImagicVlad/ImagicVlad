@@ -16,7 +16,7 @@ Now I am in 11th grade. After receiving secondary education, I want to go to uni
 > - asdasd
 > 
 > ### Python 
-> - asdasd
+> - <a href="https://github.com/ImagicVlad" target="_blank"> asdasd </a>
 >   
 > ### GO 
 > - asdasd
