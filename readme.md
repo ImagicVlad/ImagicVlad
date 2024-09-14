@@ -13,21 +13,21 @@ Now I am in 11th grade. After receiving secondary education, I want to go to uni
 > ### Ruby <br>
 > - asdasd
 > 
-> Python <br>
+> ### Python <br>
 > - asdasd
 >   
-> GO <br>
+> ### GO <br>
 > - asdasd
 >   
-> c# <br>
+> ### c# <br>
 > - asdasd
 >   
-> C++ <br>
+> ### C++ <br>
 > - asdasd
 >
-> HTML <br>
+> ### HTML <br>
 > - asdasd
 >
-> CSS <br>
+> ### CSS <br>
 > - asdasd
 >   
