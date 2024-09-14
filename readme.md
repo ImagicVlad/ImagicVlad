@@ -12,24 +12,24 @@ Now I am in 11th grade. After receiving secondary education, I want to go to uni
 ### Alr. Let's take a look at my Readme
 
 ### Programming languages
-> ### Ruby <br>
+> ### Ruby 
 > - asdasd
 > 
-> ### Python <br>
+> ### Python 
 > - asdasd
 >   
-> ### GO <br>
+> ### GO 
 > - asdasd
 >   
 > ### C#
 > - asdasd
 >   
-> ### C++ <br>
+> ### C++ 
 > - asdasd
 >
-> ### HTML <br>
+> ### HTML 
 > - asdasd
 >
-> ### CSS <br>
+> ### CSS 
 > - asdasd
 >   
