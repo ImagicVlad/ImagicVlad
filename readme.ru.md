@@ -5,7 +5,7 @@
     <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif"    height="32"/>  
   </h1>
   <h3 align="center">Студент информатики, обозреватель IT-новостей из России. <br>
-  |<a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/readme.ru.md">English</a>|
+  |<a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/readme.md">English</a>|
   </h3>
   <br>
   
