@@ -112,7 +112,7 @@ def run_schedule(updater):
         time.sleep(1)
 
 def main():
-    updater = Updater("7674846090:AAGSYemffs0UibpJQKae9VgYRTtEK-hpjl0", use_context=True)
+    updater = Updater("//////////////////////", use_context=True)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
