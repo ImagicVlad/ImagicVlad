@@ -1,1 +1,140 @@
+import logging
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters, CallbackQueryHandler
+from flask import Flask
+import threading
+import schedule
+import time
+
+# Настраиваем логирование
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+
+# Глобальные переменные
+user_data = {}
+flask_app = Flask(__name__)
+
+# Функция для обработки команды /start
+def start(update: Update, context: CallbackContext):
+    chat_id = update.message.chat_id
+    user_data[chat_id] = {'state': 'initial'}
+    keyboard = [
+        [InlineKeyboardButton("Cash", callback_data='cash')],
+        [InlineKeyboardButton("Sum", callback_data='sum')],
+        [InlineKeyboardButton("Reset", callback_data='reset')]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    update.message.reply_text("Привет! Я бот для подсчета процентов. Используйте кнопки ниже для взаимодействия:", reply_markup=reply_markup)
+
+# Функция для обработки команды cash
+def cash(update, context):
+    chat_id = update.effective_chat.id
+    user_data[chat_id] = {'state': 'waiting_for_amount'}
+    context.bot.send_message(chat_id, "Введите сумму, которая лежит у вас под проценты:")
+
+# Функция для обработки ввода суммы и процента
+def handle_amount(update: Update, context: CallbackContext):
+    chat_id = update.message.chat_id
+
+    if chat_id in user_data and user_data[chat_id]['state'] == 'waiting_for_amount':
+        try:
+            amount = float(update.message.text.replace(',', '.'))
+            user_data[chat_id]['amount'] = amount
+            user_data[chat_id]['total_interest'] = 0.0
+            user_data[chat_id]['daily_interest'] = 0.0
+            user_data[chat_id]['state'] = 'waiting_for_interest'
+            update.message.reply_text("Введите проценты (дробные пишутся через запятую):")
+        except ValueError:
+            update.message.reply_text("Пожалуйста, введите корректную сумму.")
+    elif chat_id in user_data and user_data[chat_id]['state'] == 'waiting_for_interest':
+        try:
+            interest = float(update.message.text.replace(',', '.'))
+            user_data[chat_id]['interest'] = interest
+            user_data[chat_id]['state'] = 'completed'
+            calculate_daily_interest(chat_id)
+            update.message.reply_text("Проценты установлены. Каждый день в 00:00 я буду присылать вам начисленную сумму.")
+        except ValueError:
+            update.message.reply_text("Пожалуйста, введите корректный процент.")
+
+# Функция для команды sum
+def sum_command(update, context):
+    chat_id = update.effective_chat.id
+    if chat_id in user_data and user_data[chat_id]['state'] == 'completed':
+        daily_interest = user_data[chat_id]['daily_interest']
+        total_interest = user_data[chat_id]['total_interest']
+        message = f"+{daily_interest:.2f} рублей\nВаша сумма процентов: {total_interest:.2f}"
+        context.bot.send_message(chat_id, message)
+    else:
+        context.bot.send_message(chat_id, "Вы еще не ввели сумму и процент. Введите команду /cash, чтобы начать.")
+
+# Функция для обработки нажатий кнопок
+def button_handler(update: Update, context: CallbackContext):
+    query = update.callback_query
+    chat_id = query.message.chat_id
+    command = query.data
+
+    if command == 'cash':
+        cash(query, context)
+    elif command == 'sum':
+        sum_command(query, context)
+    elif command == 'reset':
+        reset_command(query, context)
+
+    query.answer()
+
+# Функция для команды reset
+def reset_command(update, context):
+    chat_id = update.effective_chat.id
+    user_data[chat_id] = {'state': 'waiting_for_amount'}
+    context.bot.send_message(chat_id, "Введите новую сумму, которая лежит у вас под проценты:")
+
+# Функция для расчета ежедневного начисления процентов
+def calculate_daily_interest(chat_id):
+    if chat_id in user_data and user_data[chat_id]['state'] == 'completed':
+        amount = user_data[chat_id]['amount']
+        interest = user_data[chat_id]['interest']
+        daily_interest = amount / 100 * interest / 365
+        user_data[chat_id]['daily_interest'] = daily_interest
+        user_data[chat_id]['total_interest'] += daily_interest
+
+# Функция для ежедневного начисления процентов
+def daily_job(context: CallbackContext):
+    bot = context.bot
+    for chat_id in user_data:
+        if user_data[chat_id]['state'] == 'completed':
+            calculate_daily_interest(chat_id)
+            total_interest = user_data[chat_id]['total_interest']
+            bot.send_message(chat_id=chat_id, text=f"Ваши накопленные проценты: {total_interest:.2f} рублей")
+
+# Запуск планировщика в отдельном потоке
+def run_schedule(updater):
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+def main():
+    updater = Updater("7674846090:AAGSYemffs0UibpJQKae9VgYRTtEK-hpjl0", use_context=True)
+    dispatcher = updater.dispatcher
+
+    dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_amount))
+    dispatcher.add_handler(CallbackQueryHandler(button_handler))
+
+    # Планируем ежедневное сообщение в 00:00
+    schedule.every().day.at("00:00").do(lambda: daily_job(dispatcher))
+
+    # Запускаем планировщик в отдельном потоке
+    threading.Thread(target=run_schedule, args=(updater,), daemon=True).start()
+
+    updater.start_polling()
+    updater.idle()
+
+# Flask endpoint для поддержания активности на Replit
+@flask_app.route('/')
+def home():
+    return "Bot is running!"
+
+if __name__ == '__main__':
+    # Запускаем Flask в отдельном потоке
+    threading.Thread(target=lambda: flask_app.run(host='0.0.0.0', port=8080), daemon=True).start()
+    main()
 
