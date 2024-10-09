@@ -22,7 +22,10 @@
 > 
 > ### Python 
 > - [asdasd](#banner)
->   
+>
+####Telegram Bot 
+I'm currently developing a telegram bot
+<a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot">Tbot</a>
 > ### GO 
 > - [asdasd](#banner)
 >   
