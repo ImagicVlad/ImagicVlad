@@ -21,7 +21,7 @@
 > - [asdasd](#banner)
 > 
 > ### Python 
-> - [asdasd](#banner)
+> - [Telegram Bot](#banner)
 >
 ### Telegram Bot 
 I'm currently developing a telegram bot
