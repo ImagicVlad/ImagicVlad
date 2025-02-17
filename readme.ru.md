@@ -36,10 +36,7 @@
 > ### C++ 
 > - [asdasd](#banner)
 >
-> ### HTML 
-> - [asdasd](#banner)
->
-> ### CSS 
+> ### HTML +(CSS)
 > - [asdasd](#banner)
 >
 ---
