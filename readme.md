@@ -35,10 +35,7 @@ I'm currently developing a telegram bot
 > ### C++ 
 > - [asdasd](#banner)
 >
-> ### HTML 
+> ### HTML +(CSS)
 > - [asdasd](#banner)
 >
-> ### CSS 
-> - [asdasd](#banner)
->
----
+
