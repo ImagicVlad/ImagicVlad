@@ -38,6 +38,7 @@
 >
 ---
 <h1 aligh="center">
-  <a href="" target="_blank">Python
+  <a href="" target="">Python
   </a>
 </h1>
+<img src="blob:https://web.telegram.org/302ce3d6-25be-4ea4-b001-bb7fcf546942"    height="32"/>
