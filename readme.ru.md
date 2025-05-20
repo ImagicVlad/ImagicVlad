@@ -42,5 +42,5 @@
   </a>
 </h1>
 ##TelegramBotИИ
-<a href="https://github.com/ImagicVlad" target="_blank">"Rudi_Fox"
+<a href="https://github.com/ImagicVlad" target="_blank">"Rudi_Fox" </a>
 это мой верный помошник 
