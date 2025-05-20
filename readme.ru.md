@@ -24,9 +24,6 @@
 > ### Python 
 > - [Telegram Bot](#banner)
 >
-### Telegram Bot 
-Сейчас я разрабатываю бота в Telegram.
-<a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot">Tbot</a>
 > ### GO 
 > - [asdasd](#banner)
 >   
