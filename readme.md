@@ -44,7 +44,7 @@
 ## TelegramBotИИ
 <a id="TbotИИ"></a>
 <a href="https://github.com/ImagicVlad" target="_blank">"Rudi_Fox" </a>
-- -this is my faithful assistant. I wanted to create a telegram bot that you can have a great chat with. Подключил к нему искуственный интелект через APIkay и воплотил идею в виде лисенка. <a href="https://github.com/ImagicVlad" target="_blank">First project </a> достаточно простой. Отвечает в письменном формате, имеет харатеристику "Хозяин" и обращается к нам, как верный друг. Но.. чего-то не хватало. <a href="https://github.com/ImagicVlad" target="_blank"> Second project </a> заключается в преобразовании текста в аудио. Я дал боту возможность отвечать в голосовом формате и с ним стало гораздо интереснее общаться.
+- -this is my faithful assistant. I wanted to create a telegram bot that you can have a great chat with. I connected it to artificial intelligence via APIkay and brought the idea to life as a fox. <a href="https://github.com/ImagicVlad" target="_blank">First project </a> is quite simple. Answers us in writing, has the characterization of “Хозяин” and addresses us as a loyal friend. Но.. чего-то не хватало. <a href="https://github.com/ImagicVlad" target="_blank"> Second project </a> заключается в преобразовании текста в аудио. Я дал боту возможность отвечать в голосовом формате и с ним стало гораздо интереснее общаться.
 
 ## TelegramBot_MM
 <a id="TbotMM"></a>
