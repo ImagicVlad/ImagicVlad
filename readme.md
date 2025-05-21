@@ -21,8 +21,8 @@
 > - [asdasd](#banner)
 > 
 > ### Python 
-> - [Telegram Bot](#banner)
->
+> - [TelegramBotИИ](#TbotИИ)
+> - [TelegramBot_MM](#TbotMM)
 > ### GO 
 > - [asdasd](#banner)
 >   
