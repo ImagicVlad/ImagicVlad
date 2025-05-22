@@ -20,7 +20,7 @@
 > ### Ruby 
 > - [asdasd](#banner)
 > 
-> ### Python 
+> ### [Python](#Python) 
 > - [TelegramBotИИ](#TbotИИ)
 > - [TelegramBot_MM](#TbotMM)
 > ### GO 
@@ -36,9 +36,9 @@
 > - [asdasd](#banner)
 >
 ---
+<a id='Python'></a>
 <h1 aligh="center">
-  <a href="" target="">Python
-  </a>
+  [Python](#Python)
 </h1>
 
 ## TelegramBotИИ
