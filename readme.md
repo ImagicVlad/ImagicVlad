@@ -19,7 +19,7 @@
 ### Programming languages
 > ### Ruby 
 > - [asdasd](#banner)
-> 
+> <a id='Pyth'><a/>
 > ### [Python](#Pyt) 
 > - [TelegramBotИИ](#TbotИИ)
 > - [TelegramBot_MM](#TbotMM)
@@ -39,7 +39,7 @@
 <a id='Pyt'></a>
 <h1 aligh="center">
   
-  [Python](#Pyt)
+  [Python](#Pyth)
 </h1>
 
 ## TelegramBotИИ
