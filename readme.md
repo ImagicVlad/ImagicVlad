@@ -47,8 +47,8 @@
 
 ["Rudi_Fox"](#TbotИИ)
 - -this is my faithful assistant. I wanted to create a telegram bot that you can have a great chat with. I connected it to artificial intelligence via APIkay and brought the idea to life as a fox. <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot%D0%98%D0%98_txt" target="_blank">First project </a> is quite simple. Answers us in writing, has the characterization of “Хозяин”(owner) and addresses us as a loyal friend. But.. something was missing. <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot%D0%98%D0%98_gs" target="_blank"> Second project </a> involved converting text into audio. I gave the bot the ability to respond with a voice and it became much more interesting to communicate with it.
-
-## TelegramBot_MM
 <a id="TbotMM"></a>
+## TelegramBot_MM
+
 <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot_MM" target="_blank">"MinterMoney" </a>
 - -this is an assistant in investments. It calculates interest on your savings every day and sends you a notification at 00:00. The goal was to create a bot that clearly shows your daily income. You can enter data into it (amount, annual interest rate) and use several commands (/cash, /sum, /reset). This bot has been a great help to me in tracking my savings. 
