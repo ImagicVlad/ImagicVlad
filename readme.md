@@ -47,6 +47,7 @@
 
 ["Rudi_Fox"](#TbotИИ)
 - -this is my faithful assistant. I wanted to create a telegram bot that you can have a great chat with. I connected it to artificial intelligence via APIkay and brought the idea to life as a fox. <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot%D0%98%D0%98_txt" target="_blank">First project </a> is quite simple. Answers us in writing, has the characterization of “Хозяин”(owner) and addresses us as a loyal friend. But.. something was missing. <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot%D0%98%D0%98_gs" target="_blank"> Second project </a> involved converting text into audio. I gave the bot the ability to respond with a voice and it became much more interesting to communicate with it.
+- 
 <a id="TbotMM"></a>
 ## TelegramBot_MM
 
