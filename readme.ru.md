@@ -20,7 +20,7 @@
 ### Языки программирования
 > ### Ruby 
 > - [asdasd](#banner)
-> 
+> <a id='Pyth'><a/>
 > ### [Python](#Pyt) 
 > - [TelegramBotИИ](#TbotИИ)
 > - [TelegramBot_MM](#TbotMM)
