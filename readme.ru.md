@@ -39,7 +39,7 @@
 ---
 <a id='Pyt'></a>
 <h1 aligh="center">
-  <a href="" target="">Python
+  [Python](#Pyth)
   </a>
 </h1>
 
