@@ -17,8 +17,8 @@
 - #### [About me](#banner)
   
 ### Programming languages
-<a id='Rub'></a>
-> ### [Ruby](#Rub1)
+ <a id='Rub'></a>
+> ### [Ruby](#ruby)
 > - [asdasd](#banner)
 > <a id='Pyth'><a/>
 > ### [Python](#Pyt) 
@@ -38,7 +38,8 @@
 > - [asdasd](#banner)
 >
 ---
-<a id='Rub1'></a>
+
+<a id='ruby'></a>
 <h1>
   
   [Ruby](#Rub)
