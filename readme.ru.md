@@ -57,4 +57,4 @@
 
 <a id='Repl'></a>
 ## Relit
-<a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot_MM" target="_blank">"Replit" </a>
+- В 8 и 9 классе я занимался в <a href="https://replit.com/@Vladmagic" target="_blank">"Replit" </a>. Там есть множество различных кодов с матрицами, массивами. Именно там я делал своего первого бота с ИИ.
