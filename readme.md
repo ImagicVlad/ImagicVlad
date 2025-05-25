@@ -55,3 +55,6 @@
 <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot_MM" target="_blank">"MinterMoney" </a>
 - -this is an assistant in investments. It calculates interest on your savings every day and sends you a notification at 00:00. The goal was to create a bot that clearly shows your daily income. You can enter data into it (amount, annual interest rate) and use several commands (/cash, /sum, /reset). This bot has been a great help to me in tracking my savings. 
 
+<a id='Repl'></a>
+## Replit
+- In grades 8-9 I studied at <a href="https://replit.com/@Vladmagic" target="_blank">"Replit" </a>. There are many different codes with matrices, arrays... That's where I made my first bot with AI.
