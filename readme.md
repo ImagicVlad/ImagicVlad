@@ -23,6 +23,7 @@
 > ### [Python](#Pyt) 
 > - [TelegramBotИИ](#TbotИИ)
 > - [TelegramBot_MM](#TbotMM)
+> - [Replit](#Repl)
 > ### GO 
 > - [asdasd](#banner)
 >   
@@ -53,3 +54,4 @@
 
 <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot_MM" target="_blank">"MinterMoney" </a>
 - -this is an assistant in investments. It calculates interest on your savings every day and sends you a notification at 00:00. The goal was to create a bot that clearly shows your daily income. You can enter data into it (amount, annual interest rate) and use several commands (/cash, /sum, /reset). This bot has been a great help to me in tracking my savings. 
+
