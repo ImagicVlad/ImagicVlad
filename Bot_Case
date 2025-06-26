@@ -1,0 +1,191 @@
+import telebot
+from telebot import types
+import os
+import json
+import random
+
+bot = telebot.TeleBot('Здесь должен быть ваш токен т-бота')
+bot.remove_webhook()
+
+# Сохранения
+state_file = "money_state.json"
+
+# Значения бота
+name = 'MoneyBot'
+money = 10000
+case1_count = 0
+case2_count = 0
+case3_count = 0
+#Админка
+admin_password = '1994'
+awaiting_password = set()
+awaiting_amount = set()
+admin_verified = set()
+
+# Загрузка состояния из файла
+def load_state():
+    global money, case1_count, case2_count, case3_count
+    if os.path.exists(state_file):
+        with open(state_file, 'r') as file:
+            data = json.load(file)
+            money = data.get('money', 10000)
+            case1_count = data.get('case1', 0)
+            case2_count = data.get('case2', 0)
+            case3_count = data.get('case3', 0)
+            print(f"Загружено состояние: money={money}")
+
+# Сохранение состояния в файл
+def save_state():
+    with open(state_file, 'w') as f:
+        json.dump({
+            'money': money,
+            'case1': case1_count,
+            'case2': case2_count,
+            'case3': case3_count
+        }, f)
+# Покупка кейсов
+def buy_case(case_number):
+    global money, case1_count, case2_count, case3_count
+    if case_number == 1:
+        cost = 59
+        if money < cost:
+            return "Недостаточно денег"
+        money -= cost
+        case1_count += 1
+    elif case_number == 2:
+        cost = 100
+        if money < cost:
+            return "Недостаточно денег"
+        money -= cost
+        case2_count += 1
+    elif case_number == 3:
+        cost = 1000
+        if money < cost:
+            return "Недостаточно денег"
+        money -= cost
+        case3_count += 1
+    save_state()
+    return f"Вы купили кейс {case_number}. Осталось денег: {money}"
+
+# Проверка инвентаря
+def iventory():
+    return f"У вас {case1_count} кейсов 1, {case2_count} кейсов 2, {case3_count} кейсов 3, {money} денег"
+
+# Открытие кейсов
+def open_case(message, case_number):
+    global money, case1_count, case2_count, case3_count
+    rewards = []
+
+    if case_number == 1:
+        if case1_count < 1:
+            return "У вас нет кейсов 1"
+        rewards = [4, 9, 17, 31, 47, 65, 96, 369]
+        case1_count -= 1
+    elif case_number == 2:
+        if case2_count < 1:
+            return "У вас нет кейсов 2"
+        rewards = [6, 31, 65, 68, 96, 98, 130, 212, 369, 520]
+        case2_count -= 1
+    elif case_number == 3:
+        if case3_count < 1:
+            return "У вас нет кейсов 3"
+        rewards = [65, 98, 130, 212, 369, 520, 1366, 2121, 3693]
+        case3_count -= 1
+
+    reward = random.choice(rewards)
+    money += reward
+
+    if reward < 20:
+        text = "синий скин"
+    elif reward < 50:
+        text = "фиолетовый скин"
+    elif reward < 100:
+        text = "розовый скин"
+    elif reward < 300:
+        text = "розовый скин стартрек"
+    else:
+        text = "золотой скин"
+
+    bot.send_message(message.chat.id, f"Вы открываете кейс {case_number}.\nИииии... Вам выпадает {text}. Ваш баланс увеличился на {reward}")
+    save_state()
+    return iventory()
+
+# Команды
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.send_message(message.chat.id, "Привет! Я бот для покупки кейсов. Здесь можно купить кейсы и открыть их. Удачи!")
+    bot.send_message(message.chat.id, "Вот что я могу: \n /buy - купить кейс \n /open - открыть кейс \n /inventory - проверить инвентарь")
+
+@bot.message_handler(commands=['buy'])
+def buy_func(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
+    markup.add("Кейс 1", "Кейс 2", "Кейс 3")
+    bot.send_message(message.chat.id, "Выберите кейс для покупки:", reply_markup=markup)
+
+@bot.message_handler(commands=['open'])
+def open_func(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
+    markup.add("Открыть кейс 1", "Открыть кейс 2", "Открыть кейс 3")
+    bot.send_message(message.chat.id, "Выберите кейс для открытия:", reply_markup=markup)
+
+@bot.message_handler(commands=['inventory'])
+def stats_func(message):
+    bot.send_message(message.chat.id, iventory())
+
+# Админка
+@bot.message_handler(commands=['admin'])
+def admin_start(message):
+    user_id = message.from_user.id
+    awaiting_password.add(user_id)
+    bot.send_message(message.chat.id, "Введите пароль для доступа:")
+
+@bot.message_handler(func=lambda message: message.text in ["Кейс 1", "Кейс 2", "Кейс 3"])
+def handle_buy(message):
+    case_num = int(message.text.split()[1])
+    result = buy_case(case_num)
+    bot.send_message(message.chat.id, result)
+
+@bot.message_handler(func=lambda message: message.text.startswith("Открыть кейс"))
+def handle_open(message):
+    case_num = int(message.text.split()[-1])
+    result = open_case(message, case_num)
+    bot.send_message(message.chat.id, result)
+
+@bot.message_handler(func=lambda message: True)
+def handle_all_messages(message):
+    user_id = message.from_user.id
+    global money
+
+    # Шаг 1: Проверка пароля
+    if user_id in awaiting_password:
+        if message.text == admin_password:
+            awaiting_password.remove(user_id)
+            admin_verified.add(user_id)
+            awaiting_amount.add(user_id)
+            bot.send_message(message.chat.id, "Пароль принят. Введите сумму, которую хотите выдать:")
+        else:
+            awaiting_password.remove(user_id)
+            bot.send_message(message.chat.id, "Неверный пароль.")
+        return
+
+    # Шаг 2: Ввод суммы
+    if user_id in awaiting_amount:
+        try:
+            amount = int(message.text)
+            money += amount
+            save_state()
+            bot.send_message(message.chat.id, f"Добавлено {amount} денег. Новый баланс: {money}")
+        except ValueError:
+            bot.send_message(message.chat.id, "Ошибка: введите число.")
+        awaiting_amount.remove(user_id)
+        admin_verified.remove(user_id)
+        return
+
+# ---------- Запуск(Проверка) ----------
+load_state()
+
+try:
+    print("Бот запущен...")
+    bot.infinity_polling()
+except Exception as e:
+    print("Ошибка:", e)
