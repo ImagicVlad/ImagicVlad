@@ -68,7 +68,7 @@
 <a id="Bot_Case"></a>
 ## Bot_Case
 <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegrammBot_Case" target="_blank">"Bot_Case" </a> 
-- -In it you can open and buy csgo cases and try to increase your balance.
+- -In it you can open and buy csgo cases and try to increase your balance. This bot remembers all the data, and after the restart everything will remain as it was. This bot is the same for everyone (if one person bought a case and spent money, the same for another). It has built-in administrator capabilities, with which you can top up your balance.
 
 <a id='Repl'></a>
 ## Replit
