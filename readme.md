@@ -24,6 +24,7 @@
 > ### [Python](#Pyt) 
 > - [TelegramBotИИ](#TbotИИ)
 > - [TelegramBot_MM](#TbotMM)
+> - [Bot_Case](#Bot_Case)
 > - [Replit](#Repl)
 > ### GO 
 > - [asdasd](#banner)
@@ -63,6 +64,11 @@
 
 <a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegramBot_MM" target="_blank">"MinterMoney" </a>
 - -this is an assistant in investments. It calculates interest on your savings every day and sends you a notification at 00:00. The goal was to create a bot that clearly shows your daily income. You can enter data into it (amount, annual interest rate) and use several commands (/cash, /sum, /reset). This bot has been a great help to me in tracking my savings. 
+
+<a id="Bot_Case"></a>
+## Bot_Case
+<a href="https://github.com/ImagicVlad/ImagicVlad/blob/main/TelegrammBot_Case" target="_blank">"Bot_Case" </a> 
+- -In it you can open and buy csgo cases and try to increase your balance.
 
 <a id='Repl'></a>
 ## Replit
