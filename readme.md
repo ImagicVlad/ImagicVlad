@@ -27,6 +27,10 @@
 > - [TelegramBot_MM](#TbotMM)
 > - [Bot_Case](#Bot_Case)
 > - [Replit](#Repl)
+>
+> ### Rust
+> - [asdasd](#banner)
+>   
 > ### GO 
 > - [asdasd](#banner)
 >   
